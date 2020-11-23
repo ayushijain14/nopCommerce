@@ -12,12 +12,9 @@ namespace Nop.Services.Catalog.Caching
         /// Clear cache data
         /// </summary>
         /// <param name="entity">Entity</param>
-        /// <param name="entityEventType">Entity event type</param>
-        protected override void ClearCache(ProductAttributeValue entity, EntityEventType entityEventType)
+        protected override void ClearCache(ProductAttributeValue entity)
         {
             Remove(NopCatalogDefaults.ProductAttributeValuesByAttributeCacheKey, entity.ProductAttributeMappingId);
-
-            base.ClearCache(entity, entityEventType);
         }
     }
 }
